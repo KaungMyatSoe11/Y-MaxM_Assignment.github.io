@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Enroll</title>
+    <link rel="stylesheet" href="Stylesheet.css">
+    <style>
+        .container {
+            width: 100%;
+            /* height: 100vh; */
+            padding-top: 10vh;
+            background: #0F2027;
+            /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #2C5364, #203A43, #0F2027);
+            /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #2C5364, #203A43, #0F2027);
+            /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        }
+        
+        .form {
+            display: inline-flex;
+            width: 50%;
+            flex-direction: column;
+            margin: 10px 0;
+            box-shadow: 1px 1px 9px -1px grey;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: #ebe8f3;
+        }
+        
+        .form-label {
+            width: fit-content;
+        }
+        
+        .form-data {
+            margin: 10px auto;
+            width: 50%;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+        }
+        /* .form-input {
+            border: 1px solid #e6e8eb;
+            border-radius: 5px;
+            display: block;
+            width: 100%;
+            overflow: visible;
+            line-height: 18px;
+            padding: 10px 16px;
+            min-height: 40px;
+            font-size: .9rem;
+            outline: none;
+             box-shadow: 12px 12px 2px 1px 1px 1px 6px 0px #16E418; 
+    }*/
+        
+        .form-label>span {
+            color: red;
+        }
+        /* .form-input:focus {
+            box-shadow: 1px 1px 6px 0px #16E418;
+        }
+         */
+        
+        .btnConfirm {
+            margin: 0 5%;
+            width: 35%;
+            float: left;
+        }
+        
+        .btnCancel {
+            margin: 0 25%;
+            width: 35%;
+            background-color: red;
+            text-decoration: none;
+            color: black;
+        }
+        
+        .btn-group {
+            margin: 10px auto;
+            width: 50%;
+            display: flex;
+            flex-direction: row;
+        }
+    </style>
+</head>
+
+<body>
+    <header style="background-color: beige;  width: 100%; height: 10vh;">
+        <nav>
+            <!-- <div style="display: inline-flex; height: 100%;">
+              
+            </div> -->
+
+            <a href="Index.html" class="Logo">Logo App</a>
+
+            <div class="menu">
+
+                <a class="menu-items " href="Index.html">Home</a>
+                <a class="menu-items" href="">Title 1</a>
+                <a class="menu-items" href="">Title 2</a>
+                <a class="menu-items" href="About.html">About</a>
+                <a class="menu-items" href="Contactus.html">Contact Us</a>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+
+        <center>
+
+
+            <form action="Index.html" method="get" class="form">
+                <div class="form-data">
+                    <label for="Name" class="form-label">Name <span>*</span></label>
+                    <input type="text" id="Name" name="Name" class="form-input" autocomplete="disable" required>
+                </div>
+                <div class="form-data">
+                    <label for="Phone" class="form-label">Phone <span>*</span></label>
+                    <input type="text" id="Phone" name="Phone" class="form-input" autocomplete="disable" required>
+                </div>
+                <div class="form-data">
+                    <label for="CourseName" class="form-label">Course Name <span>*</span></label>
+                    <input type="text" id="CourseName" name="CourseName" class="form-input" autocomplete="disable" required>
+                </div>
+                <div class="form-data">
+                    <label for="Address" class="form-label">Address <span>*</span></label>
+                    <textarea style="height: 100px;" id="Address" name="Address" class="form-input" autocomplete="disable" wrap="soft" required>
+                        </textarea>
+
+                </div>
+                <div class="form-data">
+                    <label for="ClassTime" class="form-label">Class Time <span>*</span></label>
+                    <select id="ClassTime" class="form-input">
+                        <option value="">--Please choose an option--</option>
+                        <option value="WeekDay">WeekDay</option>
+                        <option value="WeekEnd">WeekEnd</option>
+            
+                    </select>
+                </div>
+
+                <div class="btn-group">
+                    <input type="submit" value="Confirm" class="btn btnConfirm">
+                    <a href="Index.html" class="btn btnCancel"> Cancel</a>
+                </div>
+
+
+            </form>
+        </center>
+    </div>
+
+
+
+
+    <div class="footer">
+        <div class="footer-content">
+            <h4>Contact Info</h4>
+            <div style="margin-top: 10px !important;">
+                <label for="" style="margin-left: 10px;">Phone</label>- 09 793354330, 09 793354331
+            </div>
+            <div>
+                <label for="" style="margin-left: 10px;">Email</label> - info@ymaxcollege.com
+            </div>
+            <div>
+                <label for="" style="margin-left: 10px;">Address</label> - No-531 (B), Mar Lar Myaing Yeik Thar street, Kamaryut Township, Yangon, Myanmar.
+            </div>
+        </div>
+
+        <div class="footer-content">
+
+            <h4>Social Link</h4>
+            <div style="margin-top: 10px !important;">
+                <a href=""> facebook</a>
+            </div>
+            <div>
+                <a href=""> YouTube</a>
+            </div>
+
+        </div>
+        <div class="footer-content">
+            <h4 style="margin-left: 15px;">Location</h4>
+            <div style="margin:0px !important;">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d15276.06273666852!2d96.128117!3d16.825578!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x111d42c4e5f4bd75!2sY%20-%20Max%20University!5e0!3m2!1sen!2smm!4v1603522964901!5m2!1sen!2smm" width="100%"
+                    height="300px" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+            </div>
+        </div>
+    </div>
+    <footer>
+        Copyright © 2020. Assignment By
+        <a href="https://www.facebook.com/KaungMyatSoe.ZhanZhao/">Kaung Myat Soe</a>
+
+    </footer>
+</body>
+
+</html>
