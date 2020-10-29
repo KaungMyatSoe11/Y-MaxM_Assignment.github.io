@@ -61,6 +61,8 @@
         background-image: url(https://www.ymaxcollege.com/wp-content/uploads/2019/03/feature1.jpg);
         background-size: cover;
         position: relative;
+        animation: image 4s linear;
+        /* timing-function delay iteration-count direction fill-mode; */
     }
     
     .Course {
@@ -174,29 +176,36 @@
 
             <div class="menu">
 
-                <a class="menu-items active" href="">Home</a>
-                <a class="menu-items" href="">Title 1</a>
-                <a class="menu-items" href="">Title 2</a>
+                <a class="menu-items active" href="Index.html">Home</a>
+                <div class="dropdown menu-items">
+                    Course
+                    <div class="dropdown-items">
+                        <a href="ProfessionalCourse.html">ProfessionalCourse</a>
+                        <a href="Ncfe.html">Ncfe </a>
+                        <a href="SQA.html">SQA Programs</a>
+                    </div>
+                </div>
                 <a class="menu-items" href="About.html">About</a>
                 <a class="menu-items" href="Contactus.html">Contact Us</a>
             </div>
         </nav>
     </header>
     <div class="h-img">
-        <div style="position: absolute; top:25vh; left: 10vh;">
-            <h2 style="color: rgb(54, 31, 31);">Welcome to Our YMax_Myanmar</h2>
-            <p style="color: rgb(14, 0, 0); font-size: 14pt; margin-top: 10px;">Y-Max College provide the modernized classroom <br />setting, Theater Room, High Speed Fiber Internet <br />Lines, refreshments for break time, Library and <br />Owned Bristol in campus etc.</p>
+        <div class="g-text" style="position: absolute; top:35vh; left: 5vh;">
+            <h2 style="color: rgb(8, 8, 8);">Welcome to Our YMax_Myanmar</h2>
+            <p style="font-weight: bold; color: rgb(255, 255, 255); font-size: 1၀pt; margin-top: 10px; text-align: justify;">Y-Max College is one of the IT and Business Management College in Myanmar and over 11 Years experiences in Higher education filed.<br>Y-Max College is one of the approved center of SQA (UK) and opening the Advanced Diploma of IT and Customized
+                award related Courses<br> which are blended of academic and vocational education.</p>
         </div>
     </div>
     <div style="padding: 5px;">
         <h3 style="margin-left: 25px;">Parters Logo</h3>
         <div>
-            <img src="https://www.ymaxcollege.com/wp-content/uploads/2019/03/plogo2_.png" alt="">
-            <img src="https://www.ymaxcollege.com/wp-content/uploads/2019/03/plogo1_.png" alt="">
-            <img src="https://www.ymaxcollege.com/wp-content/uploads/2019/01/plogo3.png" alt="">
-            <img src="https://www.ymaxcollege.com/wp-content/uploads/2019/03/plogo4.png" alt="">
-            <img src="https://www.ymaxcollege.com/wp-content/uploads/2019/03/plogo5.png" alt="">
-            <img src="https://www.ymaxcollege.com/wp-content/uploads/2019/10/ncfe-Logo-1.png" style="height: auto; width: 210px;" alt="">
+            <img class="parters-log" style="animation-duration: 0.5s;" src="https://www.ymaxcollege.com/wp-content/uploads/2019/03/plogo2_.png" alt="">
+            <img class="parters-log" style="animation-duration: 1s;" src="https://www.ymaxcollege.com/wp-content/uploads/2019/03/plogo1_.png" alt="">
+            <img class="parters-log" style="animation-duration: 2s;" src="https://www.ymaxcollege.com/wp-content/uploads/2019/01/plogo3.png" alt="">
+            <img class="parters-log" style="animation-duration: 2.5s;" src="https://www.ymaxcollege.com/wp-content/uploads/2019/03/plogo4.png" alt="">
+            <img class="parters-log" style="animation-duration: 3s;" src="https://www.ymaxcollege.com/wp-content/uploads/2019/03/plogo5.png" alt="">
+            <img class="parters-log" src="https://www.ymaxcollege.com/wp-content/uploads/2019/10/ncfe-Logo-1.png" style="height: auto; width: 210px; animation-duration: 3.5s;" alt="">
         </div>
     </div>
     <section style="width: 100%; height: 150vh; margin-top: 10px;">
