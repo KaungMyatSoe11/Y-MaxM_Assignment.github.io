@@ -51,6 +51,60 @@
         color: red;
     }
 </style>
+<script>
+    function checkdata(txt) {
+        var tool = document.getElementById(txt);
+        var textbox = document.forms["formdata"][txt];
+        var data = textbox.value;
+        console.log(data);
+        if (data == "") {
+            tool.style.boxShadow = " 1px 1px 6px 0px red ";
+            tool.focus();
+
+        } else {
+
+            tool.style.boxShadow = "  1px 1px 6px 0px transparent ";
+            console.log("ch");
+        }
+
+
+    }
+
+    function checkemail() {
+        var textbox = document.forms["formdata"]["Email"];
+        var v = textbox.value.indexOf('@');
+        console.log(v);
+        if (v == -1) {
+            document.getElementById("Emailerror").style.display = "";
+
+        } else {
+            document.getElementById("Emailerror").style.display = "none ";
+        }
+    }
+
+    function al() {
+        var vaild = false;
+        var tool = new Array('Name', 'Email', 'Message', 'Phone', 'Title');
+        tool.forEach(txt => {
+            checkdata(txt);
+            var name = document.getElementById(txt).value;
+            if (name == "") {
+                vaild = false;
+
+            } else {
+                vaild = true;
+            }
+        });
+
+
+
+        if (vaild) {
+            window.alert(`${name} \n Thank For Contact !`);
+        }
+
+
+    }
+</script>
 
 <body>
     <header style="background-color: beige;  width: 100%; height: 10vh;">
@@ -79,7 +133,7 @@
     </header>
     <div class="container">
 
-        <form action="Index.html">
+        <form action="Index.html" name="formdata">
             <fieldset class="form-contact">
                 <legend align="Center">
                     <h1 align="Center">Contact Us</h1>
@@ -87,34 +141,34 @@
                 <div class="row">
                     <div class="form-data">
                         <label for="Name" class="form-label">Name <span>*</span></label>
-                        <input type="text" id="Name" name="Name" class="form-input" autocomplete="disable" required>
+                        <input type="text" onkeydown=" checkdata('Name')" onfocus="checkdata('Name')" id="Name" name="Name" class="form-input" autocomplete="disable" required>
                     </div>
                     <div class="form-data">
-                        <label for="Email" class="form-label">Email <span>*</span></label>
-                        <input type="text" id="Email" name="Email" class="form-input" autocomplete="disable" required>
+                        <label for="Email" class="form-label">Email <span>*</span> <span id="Emailerror" style="display: none;">Worng Format</span> </label>
+                        <input type="text" id="Email" name="Email" onfocus="checkdata('Email')" onkeydown=" checkdata('Email'),checkemail()" class="form-input" autocomplete="disable" required>
                     </div>
                 </div>
                 <div class="row">
                     <div class="form-data">
                         <label for="Phone" class="form-label">Phone <span>*</span></label>
-                        <input type="text" id="Phone" name="Phone" class="form-input" autocomplete="disable" required>
+                        <input type="number" id="Phone" name="Phone" onkeydown=" checkdata('Phone')" onfocus=" checkdata('Phone')" class="form-input" autocomplete="disable" required>
                     </div>
                     <div class="form-data">
                         <label for="Title" class="form-label">Title <span>*</span></label>
-                        <input type="text" id="Title" name="Title" class="form-input" autocomplete="disable" required>
+                        <input type="text" id="Title" name="Title" onfocus=" checkdata('Title')" onkeydown=" checkdata('Title')" class="form-input" autocomplete="disable" required>
                     </div>
                 </div>
                 <div class="Message">
                     <div class="form-data">
                         <label for="Message" class="form-label">Message <span>*</span></label>
-                        <textarea type="text" id="Message" name="Message" class="form-input" style="min-height: 150px;" autocomplete="disable" required></textarea>
+                        <textarea type="text" id="Message" onkeydown=" checkdata('Message')" onfocus=" checkdata('Message')" name="Message" class="form-input" style="min-height: 150px;" autocomplete="disable" required></textarea>
 
                     </div>
 
                 </div>
                 <div>
 
-                    <input type="submit" value="Send" class="btn btnSend">
+                    <input type="submit" onclick="al()" value="Send" class="btn btnSend">
 
                 </div>
             </fieldset>
