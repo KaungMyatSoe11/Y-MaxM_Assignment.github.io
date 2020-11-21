@@ -286,6 +286,9 @@ footer {
     -o-animation: toLeft;
     -webkit-animation: toLeft;
     -moz-animation: toLeft;
+    width: 250px;
+    margin-right: 10px;
+    border: 1px solid black;
     /* timing-function delay iteration-count direction fill-mode; */
 }
 
