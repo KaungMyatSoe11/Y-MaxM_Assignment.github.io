@@ -58,8 +58,8 @@
         margin-top: 10vh;
         width: 100%;
         height: 60vh;
-        background-image: url(https://www.ymaxcollege.com/wp-content/uploads/2019/03/feature3.jpg);
-        background-size: cover;
+        background-image: url('Images/H1.jpg');
+        background-size: cover !important;
         position: relative;
         animation: image 4s linear;
         /* timing-function delay iteration-count direction fill-mode; */
@@ -164,8 +164,50 @@
         text-decoration: none;
     }
 </style>
+<script>
+    var i = j = 0;
 
-<body>
+    function slide() {
+        var slider = document.getElementById('slide-img');
+        var slideimg = new Array("H1.jpg", "H2.jpg", "H3.jpg");
+
+        slider.style.animationName = 'image'
+        var d = slideimg[i];
+        slider.style.background = `url('Images/${d}')  `;
+
+        var da = `url('Images/${d}') `;
+
+        console.log(i);
+        if (i == 2) {
+            i = 0;
+        } else {
+            i++;
+        }
+        setTimeout("slide()", 5000)
+    }
+
+    function showhide() {
+        var id = new Array("p1", "p2", "p3", "p4", "p5")
+
+        var data = document.getElementById(`${id[j]}`);
+
+
+
+        if (data.style.display == "") {
+            data.style.display = "none";
+        } else {
+            data.style.display = "";
+        }
+        if (j >= 4) {
+            j = 0;
+        } else {
+            j++;
+        }
+        setTimeout("showhide()", 1000)
+    }
+</script>
+
+<body onload="slide(),showhide()">
     <header style="background-color: beige;  width: 100%; height: 10vh;">
         <nav>
             <!-- <div style="display: inline-flex; height: 100%;">
@@ -190,25 +232,26 @@
             </div>
         </nav>
     </header>
-    <div class="h-img">
+    <div class="h-img" id="slide-img">
         <div class="g-text" style="position: absolute; top:35vh; left: 5vh;">
             <h2 style="color: rgb(224, 6, 6);">Welcome to Our YMax_Myanmar</h2>
-            <p style="font-weight: bold; color: rgb(255, 255, 255); font-size: 1၀pt; margin-top: 10px; text-align: justify;">Y-Max College is one of the IT and Business Management College in Myanmar and over 11 Years experiences in Higher education filed.<br>Y-Max College is one of the approved center of SQA (UK) and opening the Advanced Diploma of IT and Customized
+            <p style="font-weight: bold; color: black; font-size: 1၀pt; margin-top: 10px; text-align: justify;">Y-Max College is one of the IT and Business Management College in Myanmar and over 11 Years experiences in Higher education filed.<br>Y-Max College is one of the approved center of SQA (UK) and opening the Advanced Diploma of IT and Customized
                 award related Courses<br> which are blended of academic and vocational education.</p>
         </div>
     </div>
-    <div style="padding: 5px;">
+    <div style="padding: 10px; ">
         <h3 style="margin-left: 25px;">Parters Logo</h3>
-        <div>
-            <img class="parters-log" style="animation-duration: 0.5s;" src="https://www.ymaxcollege.com/wp-content/uploads/2019/03/plogo2_.png" alt="">
-            <img class="parters-log" style="animation-duration: 1s;" src="https://www.ymaxcollege.com/wp-content/uploads/2019/03/plogo1_.png" alt="">
-            <img class="parters-log" style="animation-duration: 2s;" src="https://www.ymaxcollege.com/wp-content/uploads/2019/01/plogo3.png" alt="">
-            <img class="parters-log" style="animation-duration: 2.5s;" src="https://www.ymaxcollege.com/wp-content/uploads/2019/03/plogo4.png" alt="">
-            <img class="parters-log" style="animation-duration: 3s;" src="https://www.ymaxcollege.com/wp-content/uploads/2019/03/plogo5.png" alt="">
-            <img class="parters-log" src="https://www.ymaxcollege.com/wp-content/uploads/2019/10/ncfe-Logo-1.png" style="height: auto; width: 210px; animation-duration: 3.5s;" alt="">
+        <div style="height: 40vh; display: flex;flex-direction: row; align-items: center; ">
+            <img id="p1" class="parters-log" style="animation-duration: 0.5s;" src="https://th.bing.com/th/id/OIP.1ZVyarzql6MoPQ72eX9d8gHaEv?w=229&h=180&c=7&o=5&pid=1.7" alt="ncfe">
+            <img id="p2" class="parters-log" style="animation-duration: 1s;" src="https://th.bing.com/th/id/OIP.PRCiXQPHFR-xF4fu2X9tNQAAAA?w=300&h=161&c=7&o=5&pid=1.7" alt="sqa">
+            <img id="p3" class="parters-log" style="animation-duration: 2s;" src="data:image/jpeg;base64,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"
+                alt="lincon">
+            <img id="p4" class="parters-log" style="animation-duration: 2.5s;" src="https://th.bing.com/th/id/OIP.PRCiXQPHFR-xF4fu2X9tNQAAAA?w=300&h=161&c=7&o=5&pid=1.7" alt="">
+            <img id="p5" class="parters-log" style="animation-duration: 3s;" src="https://th.bing.com/th/id/OIP.PRCiXQPHFR-xF4fu2X9tNQAAAA?w=300&h=161&c=7&o=5&pid=1.7" alt="">
+
         </div>
     </div>
-    <section style="width: 100%; height: 150vh; margin-top: 10px;">
+    <section style="width: 100%; height: 150vh; margin-top: 5px;">
         <div style="display: flex; flex-direction: row;  ">
             <div class="Course">
                 <img src="https://th.bing.com/th/id/OIP.Mxkcbtx0iwgzX1hnpUm1IQHaEK?w=271&h=180&c=7&o=5&pid=1.7" alt="" style="width: 100%; " height="200px">
@@ -246,7 +289,7 @@
                 <a href="Enroll.html"> <button class="Enrollbtn" type="submit">Enorll</button></a>
             </div>
             <div class="Course">
-                <img src="https://www.ymaxcollege.com/wp-content/uploads/2019/03/course3-1.jpg" alt="" style="width: 100%; " height="200px">
+                <img src="https://th.bing.com/th/id/OIP.eet1XJxd-goJp_GnZ59plAHaFL?w=257&h=180&c=7&o=5&pid=1.7" alt="" style="width: 100%; " height="200px">
 
                 <ul>
                     <h5>Diploma in Web Development</h5>
@@ -267,7 +310,7 @@
                 <a href="Enroll.html"> <button class="Enrollbtn" type="submit">Enorll</button></a>
             </div>
             <div class="Course">
-                <img src="https://www.ymaxcollege.com/wp-content/uploads/2019/03/course3-1.jpg" alt="" style="width: 100%; " height="200px">
+                <img src="https://th.bing.com/th/id/OIP.bnR-zDxpFAgDnVd8NoEbBgHaFl?w=238&h=181&c=7&o=5&pid=1.7" alt="" style="width: 100%; " height="200px">
 
                 <ul>
                     <h5>Diploma in Ethical Hacking and Cybersecurity</h5>
