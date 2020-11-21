@@ -84,6 +84,46 @@
             flex-direction: row;
         }
     </style>
+
+    <script>
+        function checkdata(txt) {
+            var tool = document.getElementById(txt);
+            var textbox = document.forms["formdata"][txt];
+            var data = textbox.value;
+            console.log(data);
+            if (data == "") {
+                tool.style.boxShadow = " 1px 1px 6px 0px red ";
+            } else {
+
+                tool.style.boxShadow = "  1px 1px 6px 0px transparent ";
+                console.log("ch");
+            }
+            tool.focus();
+
+        }
+
+        function checkemail() {
+            var textbox = document.forms["formdata"]["Email"];
+            var v = textbox.value.indexOf('@');
+            console.log(v);
+            if (v == -1) {
+                document.getElementById("Emailerror").style.display = "";
+
+            } else {
+                document.getElementById("Emailerror").style.display = "none !important";
+            }
+        }
+
+        function checkcombom() {
+            var name = document.getElementById('Name').value;
+            var cbo = document.getElementById('ClassTime');
+            if (cbo.value == "0") {
+                window.alert("Please Choose Class Time!");
+            } else {
+                window.alert(`${name} \n Thank For Enroll!`);
+            }
+        }
+    </script>
 </head>
 
 <body>
@@ -116,29 +156,34 @@
         <center>
 
 
-            <form action="Index.html" method="get" class="form">
+            <form action="Index.html" method="get" class="form" name="formdata">
                 <div class="form-data">
                     <label for="Name" class="form-label">Name <span>*</span></label>
-                    <input type="text" id="Name" name="Name" class="form-input" autocomplete="disable" required>
+                    <input type="text" id="Name" value="" onkeydown="checkdata(`Name`)" name="Name" class="form-input" autocomplete="disable" required>
+                </div>
+                <div class="form-data">
+                    <label for="Email" class="form-label">Email <span>*</span> <span id="Emailerror" style="display: none;">Worng Format</span> </label>
+                    <input type="email" id="Email" name="Email" class="form-input" onkeydown="checkdata(`Email`),checkemail()" autocomplete="disable" required>
                 </div>
                 <div class="form-data">
                     <label for="Phone" class="form-label">Phone <span>*</span></label>
-                    <input type="text" id="Phone" name="Phone" class="form-input" autocomplete="disable" required>
+                    <input type="number" id="Phone" name="Phone" class="form-input" onkeydown="checkdata(`Phone`)" autocomplete="disable" required>
                 </div>
+
                 <div class="form-data">
                     <label for="CourseName" class="form-label">Course Name <span>*</span></label>
-                    <input type="text" id="CourseName" name="CourseName" class="form-input" autocomplete="disable" required>
+                    <input type="text" id="CourseName" name="CourseName" onkeydown="checkdata(`CourseName`)" class="form-input" autocomplete="disable" required>
                 </div>
                 <div class="form-data">
                     <label for="Address" class="form-label">Address <span>*</span></label>
-                    <textarea style="height: 100px;" id="Address" name="Address" class="form-input" autocomplete="disable" wrap="soft" required>
+                    <textarea aria-valuetext="" style="height: 100px;" id="Address" name="Address" onkeydown="checkdata(`Address`)" class="form-input" autocomplete="disable" wrap="soft" required>
                         </textarea>
 
                 </div>
                 <div class="form-data">
                     <label for="ClassTime" class="form-label">Class Time <span>*</span></label>
                     <select id="ClassTime" class="form-input">
-                        <option value="">--Please choose an option--</option>
+                        <option value="0">--Please choose an option--</option>
                         <option value="WeekDay">WeekDay</option>
                         <option value="WeekEnd">WeekEnd</option>
             
@@ -146,7 +191,7 @@
                 </div>
 
                 <div class="btn-group">
-                    <input type="submit" value="Confirm" class="btn btnConfirm">
+                    <input type="submit" value="Confirm" onclick="checkcombom()" class="btn btnConfirm">
                     <a href="Index.html" class="btn btnCancel"> Cancel</a>
                 </div>
 
