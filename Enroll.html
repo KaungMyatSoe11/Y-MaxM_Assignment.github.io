@@ -110,7 +110,7 @@
                 document.getElementById("Emailerror").style.display = "";
 
             } else {
-                document.getElementById("Emailerror").style.display = "none !important";
+                document.getElementById("Emailerror").style.display = "none ";
             }
         }
 
@@ -159,24 +159,24 @@
             <form action="Index.html" method="get" class="form" name="formdata">
                 <div class="form-data">
                     <label for="Name" class="form-label">Name <span>*</span></label>
-                    <input type="text" id="Name" value="" onkeydown="checkdata(`Name`)" name="Name" class="form-input" autocomplete="disable" required>
+                    <input type="text" id="Name" value="" onkeydown="checkdata(`Name`)" onfocus="checkdata(`Name`)" name="Name" class="form-input" autocomplete="disable" required>
                 </div>
                 <div class="form-data">
                     <label for="Email" class="form-label">Email <span>*</span> <span id="Emailerror" style="display: none;">Worng Format</span> </label>
-                    <input type="email" id="Email" name="Email" class="form-input" onkeydown="checkdata(`Email`),checkemail()" autocomplete="disable" required>
+                    <input type="email" id="Email" name="Email" class="form-input" onkeydown="checkdata(`Email`),checkemail()" onfocus="checkdata(`Email`),checkemail()" autocomplete="disable" required>
                 </div>
                 <div class="form-data">
                     <label for="Phone" class="form-label">Phone <span>*</span></label>
-                    <input type="number" id="Phone" name="Phone" class="form-input" onkeydown="checkdata(`Phone`)" autocomplete="disable" required>
+                    <input type="number" id="Phone" name="Phone" class="form-input" onkeydown="checkdata(`Phone`)" onfocus="checkdata(`Phone`)" autocomplete="disable" required>
                 </div>
 
                 <div class="form-data">
                     <label for="CourseName" class="form-label">Course Name <span>*</span></label>
-                    <input type="text" id="CourseName" name="CourseName" onkeydown="checkdata(`CourseName`)" class="form-input" autocomplete="disable" required>
+                    <input type="text" id="CourseName" name="CourseName" onkeydown="checkdata(`CourseName`)" onfocus="checkdata(`CourseName`)" class="form-input" autocomplete="disable" required>
                 </div>
                 <div class="form-data">
                     <label for="Address" class="form-label">Address <span>*</span></label>
-                    <textarea aria-valuetext="" style="height: 100px;" id="Address" name="Address" onkeydown="checkdata(`Address`)" class="form-input" autocomplete="disable" wrap="soft" required>
+                    <textarea aria-valuetext="" style="height: 100px;" id="Address" name="Address" onkeydown="checkdata(`Address`)" onfocus="checkdata(`Address`)" class="form-input" autocomplete="disable" wrap="soft" required>
                         </textarea>
 
                 </div>
